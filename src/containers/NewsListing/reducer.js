@@ -1,6 +1,4 @@
-import {
-  FETCH_DATA_SUCCESS,
-} from './constants';
+import { FETCH_DATA_SUCCESS } from "./constants";
 
 const initialState = {
   articles: [],
@@ -9,14 +7,14 @@ const initialState = {
 };
 
 function newsReducer(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case FETCH_DATA_SUCCESS: {
       return {
         ...state,
         articles: action.payload.response.articles,
         source: action.payload.response.source,
         fetching: false,
-      }
+      };
     }
     default: {
       return state;

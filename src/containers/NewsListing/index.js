@@ -1,14 +1,14 @@
-import './styles.css';
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import CircularProgress from 'material-ui/CircularProgress';
+import "./styles.css";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import CircularProgress from "material-ui/CircularProgress";
 
-import { CardComponent, NoInternet } from 'components';
-import Paper from 'material-ui/Paper';
+import { CardComponent, NoInternet } from "components";
+import Paper from "material-ui/Paper";
 
 const muStyles = {
   padding: 50,
-  textAlign: 'center',
+  textAlign: "center",
   marginBottom: 20,
 };
 
@@ -16,10 +16,11 @@ class NewsListing extends Component {
   renderLoading() {
     const { fetching } = this.props;
     return (
-      fetching &&
+      fetching && (
         <Paper style={muStyles} zDepth={1} rounded={false}>
           <CircularProgress />
         </Paper>
+      )
     );
   }
 
@@ -27,16 +28,18 @@ class NewsListing extends Component {
     const { articles } = this.props;
     let element = null;
     if (!navigator.onLine) {
-      element = <NoInternet />
+      element = <NoInternet />;
     } else {
-      element = articles.map((item, index) => <CardComponent key={index} {...item} />);
+      element = articles.map((item, index) => (
+        <CardComponent key={index} {...item} />
+      ));
     }
     return (
       <div className="app">
         {element}
         {this.renderLoading()}
       </div>
-    )
+    );
   }
 }
 

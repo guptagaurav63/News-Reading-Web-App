@@ -1,5 +1,9 @@
-import Header from "./Header";
-import CardComponent from "./CardComponent";
-import NoInternet from "./NoInternet";
+import Header from './Header';
+import CardComponent from './CardComponent';
+import NoInternet from './NoInternet';
 
-export { Header, CardComponent, NoInternet };
+export {
+  Header,
+  CardComponent,
+  NoInternet,
+};
