@@ -1,5 +1,5 @@
 export function normalizeData(rawData) {
-  return rawData.map(item => {
+  return rawData.map((item) => {
     item.publishedDate = `Published at ${prettyDisplayDate(item.publishedAt)}`;
     return item;
   });

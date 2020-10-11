@@ -1,16 +1,20 @@
-import React from 'react';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import './styles.css';
+import React from "react";
+import {
+  Card,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  CardTitle,
+  CardText,
+} from "material-ui/Card";
+import FlatButton from "material-ui/FlatButton";
+import "./styles.css";
 
-const CardComponent=(props)=> {
+const CardComponent = (props) => {
   const { title, urlToImage, description, url, author, publishedDate } = props;
   return (
     <Card className="cardItem">
-      <CardHeader
-        title={author}
-        subtitle={publishedDate}
-      />
+      <CardHeader title={author} subtitle={publishedDate} />
 
       <CardMedia overlay={<CardTitle title={title} subtitle={author} />}>
         {urlToImage && <img src={urlToImage} role="presentation" alt={title} />}
@@ -26,7 +30,6 @@ const CardComponent=(props)=> {
         </a>
       </CardActions>
     </Card>
-  )
-}
-
+  );
+};
 export default CardComponent;

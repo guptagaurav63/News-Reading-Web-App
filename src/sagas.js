@@ -1,7 +1,5 @@
-import NewListing from './containers/NewsListing/sagas';
+import NewListing from "./containers/NewsListing/sagas";
 
-export default function* AppSaga () {
-  yield [
-    NewListing(),
-  ]
+export default function* AppSaga() {
+  yield [NewListing()];
 }
